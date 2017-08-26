@@ -10,15 +10,15 @@ class Json
 public:
     Json();
 
-    Json(std::string & /* _body */);
+    Json(std::string &);
 
-    void add(std::string & /* _body */);
+    void add(std::string &);
 
     std::vector <std::string> version();
 
-    std::string version(const std::string & /* _body */);
+    std::string version(const std::string &);
 
-    std::vector <std::string> split(const std::string & /* data */, const char & /* decilim */);
+    std::vector <std::string> split(const std::string &, const char);
 
 private:
     std::string body;

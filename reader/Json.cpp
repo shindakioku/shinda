@@ -70,7 +70,7 @@ std::string Json::version(const std::string &_body)
     return s;
 }
 
-std::vector <std::string> Json::split(const std::string &data, const char &decilim)
+std::vector <std::string> Json::split(const std::string &data, const char decilim)
 {
     std::vector <std::string> result;
     std::istringstream iss(data);

@@ -20,10 +20,10 @@ private:
      first - username/packagename
      second - version of tag, if * then it will master
     */
-    void addDependencies(const std::string & /* first */, const std::string & /* second */);
+    void addDependencies(const std::string &, const std::string &);
 
 public:
-    Reader(const std::string & /* name */);
+    Reader(const std::string &);
 
     int read();
 

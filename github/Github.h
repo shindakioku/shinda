@@ -10,14 +10,14 @@ class Github
 public:
     Github();
 
-    std::string tags(const std::string & /* creator */, const std::string & /* repo */);
+    std::string tags(const std::string &, const std::string &);
 
-    void clone(const std::string & /* url */);
+    void clone(const std::string &);
 
-    void cloneTag(const std::string & /* url */, const std::string & /* version */);
+    void cloneTag(const std::string &, const std::string &);
 
 private:
     const std::string _url;
 
-    static size_t writeCallback(void * /* contents */, size_t /* size */, size_t /* nmemb */, void * /* userp */);
+    static size_t writeCallback(void *, size_t, size_t, void *);
 };

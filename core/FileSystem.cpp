@@ -21,7 +21,7 @@ bool FileSystem::fileExists(const std::string &path)
 
 int FileSystem::removeDir(const std::string &path)
 {
-    auto s = "sudo rm -rf " + path;
+    auto s = "rm -rf " + path;
     system(s.c_str());
 }
 

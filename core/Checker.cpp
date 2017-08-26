@@ -5,18 +5,14 @@ void Checker::check(const std::string &github,
                     const std::string &cVersion,
                     const std::string &gVersion)
 {
-    using namespace std;
-
-    auto json = new Json;
+    Json json;
     // vsv = vector shinda version, vgv - vector github version
-    auto vsv = json->split(sVersion, '.');
-    auto vgv = json->split(gVersion, '.');
-
-    delete json;
+    auto vsv = json.split(sVersion, '.');
+    auto vgv = json.split(gVersion, '.');
 
     // // a - shinda version ,b - github version
-    Versions a(stoi(vsv[0]), 2 <= vsv.size() ? stoi(vsv[1]) : 0, 3 == vsv.size() ? stoi(vsv[2]) : 0);
-    Versions b(stoi(vgv[0]), 2 <= vgv.size() ? stoi(vgv[1]) : 0, 3 == vgv.size() ? stoi(vgv[2]) : 0);
+    Versions a(std::stoi(vsv[0]), 2 <= vsv.size() ? std::stoi(vsv[1]) : 0, 3 == vsv.size() ? std::stoi(vsv[2]) : 0);
+    Versions b(std::stoi(vgv[0]), 2 <= vgv.size() ? std::stoi(vgv[1]) : 0, 3 == vgv.size() ? std::stoi(vgv[2]) : 0);
 
     if (b.version > a.version)
     {

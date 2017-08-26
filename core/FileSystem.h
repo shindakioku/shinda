@@ -10,11 +10,11 @@
 class FileSystem
 {
 public:
-    static bool dirExists(const std::string & /* path */);
+    static bool dirExists(const std::string &);
 
-    static bool fileExists(const std::string & /* path */);
+    static bool fileExists(const std::string &);
 
-    static int removeDir(const std::string & /* path */);
+    static int removeDir(const std::string &);
 
-    static void write(const std::string & /* _file */, const std::map <std::string, std::string> & /* versions */);
+    static void write(const std::string &, const std::map <std::string, std::string> &);
 };

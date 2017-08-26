@@ -20,17 +20,15 @@ union Versions
 class Checker
 {
 public:
-    ~Checker();
-
     /*
      sVersion - shinda version (so, version from shinda.json)
      cVersion - clone version (only numbers)
      gVersion - github version (last version from tags)
     */
-    void check(const std::string & /* github */,
+    void check(const std::string &,
                const std::string & /* sVersion */,
                const std::string & /* cVersion */,
                const std::string & /* gVersion */);
 
-    void checkMore(const std::string & /* github */);
+    void checkMore(const std::string &);
 };

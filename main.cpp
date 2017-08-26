@@ -1,11 +1,9 @@
 #include <string>
 #include "core/Core.h"
 
-using namespace std;
-
 int main()
 {
-	auto core = new Core("shinda.json");
+    Core core("shinda.json");
 
-	return 0;
+    return 0;
 }

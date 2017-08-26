@@ -11,24 +11,22 @@
 class Core
 {
 public:
-    Core(const std::string & /* filename */, const bool & = true /* _updateShinda */);
-
-    ~Core();
+    Core(const std::string &, const bool = true);
 
 private:
     std::map <std::string, std::string> versionsToShinda;
 
     bool updateShinda;
 
-    Github *github;
+    Github github;
 
-    Json *json;
+    Json json;
 
-    Reader *reader;
+    Reader reader;
 
     void check();
 
-    void setVersion(const std::string & /* github */, const std::string & /* version */);
+    void setVersion(const std::string &, const std::string &);
 
     void updateVersions();
 };
