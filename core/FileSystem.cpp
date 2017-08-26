@@ -22,7 +22,7 @@ bool FileSystem::fileExists(const std::string &path)
 int FileSystem::removeDir(const std::string &path)
 {
     auto s = "rm -rf " + path;
-    system(s.c_str());
+    return system(s.c_str());
 }
 
 void FileSystem::write(const std::string &_file, const std::map <std::string, std::string> &versions)
