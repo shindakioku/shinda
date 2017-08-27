@@ -2,11 +2,10 @@
 #include "Core.h"
 
 Core::Core(const std::string &filename, const bool _updateShinda)
-    :
-    updateShinda(_updateShinda),
-    github(Github()),
-    json(Json()),
-    reader(Reader(filename))
+    : updateShinda(_updateShinda)
+    , github(Github())
+    , json(Json())
+    , reader(Reader(filename))
 {
     check();
 }

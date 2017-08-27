@@ -1,11 +1,8 @@
 #include "Github.h"
 
 Github::Github()
-    :
-    _url("https://github.com/")
-{
-
-}
+    : _url("https://github.com/")
+{}
 
 std::string Github::tags(const std::string &creator, const std::string &repo)
 {
