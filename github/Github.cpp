@@ -51,7 +51,7 @@ void Github::checkoutTag(std::string const& url, std::string const& version)
 
 size_t Github::writeCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
-    ((std::string *) userp)->append((char *) contents, size * nmemb);
+    reinterpret_cast<std::string *>(userp)->append(reinterpret_cast<char*>(contents), size * nmemb);
 
     return size * nmemb;
 }
