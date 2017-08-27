@@ -13,6 +13,8 @@ class Core
 public:
     Core(const std::string &, const bool = true);
 
+    void check();
+
 private:
     std::map <std::string, std::string> versionsToShinda;
 
@@ -23,8 +25,6 @@ private:
     Json json;
 
     Reader reader;
-
-    void check();
 
     void setVersion(const std::string &, const std::string &);
 

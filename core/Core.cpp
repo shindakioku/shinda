@@ -6,9 +6,7 @@ Core::Core(const std::string &filename, const bool _updateShinda)
     , github(Github())
     , json(Json())
     , reader(Reader(filename))
-{
-    check();
-}
+{}
 
 void Core::check()
 {

@@ -28,6 +28,6 @@ void Checker::checkMore(const std::string &github)
     auto path = "vendor/" + github + "/shinda/shinda.json";
 
     if (FileSystem::fileExists(path)) {
-        Core core(path, false);
+        Core(path, false).check();
     }
 }

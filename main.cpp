@@ -4,6 +4,6 @@
 int main()
 {
     Core core("shinda.json");
-
+    core.check();
     return 0;
 }
