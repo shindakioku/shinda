@@ -4,7 +4,7 @@ Github::Github()
     : _url("https://github.com/")
 {}
 
-std::string Github::tags(const std::string &creator, const std::string &repo)
+std::string Github::tags(std::string const& creator, std::string const& repo)
 {
     CURL *curl;
     CURLcode res;
@@ -28,7 +28,7 @@ std::string Github::tags(const std::string &creator, const std::string &repo)
     return "";
 }
 
-void Github::clone(const std::string &url)
+void Github::clone(std::string const& url)
 {
     auto s = "git clone " + _url + url + " vendor/" + url;
 
@@ -39,7 +39,7 @@ void Github::clone(const std::string &url)
     system(s.c_str());
 }
 
-void Github::cloneTag(const std::string &url, const std::string &version)
+void Github::checkoutTag(std::string const& url, std::string const& version)
 {
     auto s = "git checkout tags/" + version;
     auto d = "vendor/" + url;
