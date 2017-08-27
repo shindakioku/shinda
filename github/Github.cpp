@@ -49,7 +49,6 @@ void Github::cloneTag(const std::string &url, const std::string &version)
     chdir(d.c_str());
     system(s.c_str());
     chdir("../../../");
-    system("clear");
 }
 
 size_t Github::writeCallback(void *contents, size_t size, size_t nmemb, void *userp)
