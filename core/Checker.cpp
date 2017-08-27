@@ -1,26 +1,25 @@
 #include "Checker.h"
 
-void Checker::check(const std::string &github,
-                    const std::string &sVersion,
-                    const std::string &cVersion,
-                    const std::string &gVersion)
+void Checker::check(std::string const& githubUrl,
+                    std::string const& shindaVersion,
+                    std::string const& cVersion,
+                    std::string const& githubVersion)
 {
     Json json;
     // vsv = vector shinda version, vgv - vector github version
-    auto vsv = json.split(sVersion, '.');
-    auto vgv = json.split(gVersion, '.');
+    auto vsv = json.split(shindaVersion, '.');
+    auto vgv = json.split(githubVersion, '.');
 
-    // // a - shinda version ,b - github version
-    Versions a(std::stoi(vsv[0]), 2 <= vsv.size() ? std::stoi(vsv[1]) : 0, 3 == vsv.size() ? std::stoi(vsv[2]) : 0);
-    Versions b(std::stoi(vgv[0]), 2 <= vgv.size() ? std::stoi(vgv[1]) : 0, 3 == vgv.size() ? std::stoi(vgv[2]) : 0);
+    Versions shinda(std::stoi(vsv[0]), 2 <= vsv.size() ? std::stoi(vsv[1]) : 0, 3 == vsv.size() ? std::stoi(vsv[2]) : 0);
+    Versions github(std::stoi(vgv[0]), 2 <= vgv.size() ? std::stoi(vgv[1]) : 0, 3 == vgv.size() ? std::stoi(vgv[2]) : 0);
 
-    if (b.version > a.version)
+    if (github.version > shinda.version)
     {
         Github _github;
 
-        checkMore(github);
+        checkMore(githubUrl);
 
-        _github.cloneTag(github, cVersion);
+        _github.cloneTag(githubUrl, cVersion);
     }
 }
 
