@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "../reader/Json.h"
+#include "reader/Json.h"
 #include "Core.h"
 
 union Versions

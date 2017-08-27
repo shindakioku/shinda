@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(CURL REQUIRED)
 
+include_directories(.)
+
 add_subdirectory(core)
 add_subdirectory(github)
 add_subdirectory(reader)
