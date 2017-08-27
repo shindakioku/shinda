@@ -19,7 +19,7 @@ void Checker::check(std::string const& githubUrl,
 
         checkMore(githubUrl);
 
-        _github.cloneTag(githubUrl, cVersion);
+        _github.checkoutTag(githubUrl, cVersion);
     }
 }
 

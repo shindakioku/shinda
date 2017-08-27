@@ -14,7 +14,7 @@ public:
 
     void clone(const std::string &);
 
-    void cloneTag(const std::string &, const std::string &);
+    void checkoutTag(const std::string &, const std::string &);
 
 private:
     const std::string _url;
