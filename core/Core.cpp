@@ -41,8 +41,9 @@ void Core::check()
         {
             github.clone(v.first);
 
-            if ("*" != v.second)
-                github.cloneTag(v.first, v.second);
+            if ("*" != v.second) {
+                github.checkoutTag(v.first, v.second);
+            }
 
             checker.checkMore(v.first);
             setVersion(v.first, v.second);
@@ -55,8 +56,9 @@ void Core::check()
         {
             github.clone(v.first);
 
-            if ("*" != v.second)
-                github.cloneTag(v.first, v.second);
+            if ("*" != v.second) {
+                github.checkoutTag(v.first, v.second);
+            }
 
             checker.checkMore(v.first);
             setVersion(v.first, v.second);
@@ -91,12 +93,14 @@ void Core::check()
 
 void Core::setVersion(const std::string &github, const std::string &version)
 {
-    if (updateShinda)
+    if (updateShinda) {
         versionsToShinda.insert(std::pair<std::string, std::string>(github, version));
+    }
 }
 
 void Core::updateVersions()
 {
-    if (updateShinda)
+    if (updateShinda) {
         FileSystem::write("shinda.json", versionsToShinda);
+    }
 }

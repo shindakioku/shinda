@@ -35,8 +35,9 @@ void Github::clone(const std::string &url)
 {
     auto s = "git clone " + _url + url + " vendor/" + url;
 
-    if (FileSystem::dirExists("vendor/" + url))
+    if (FileSystem::dirExists("vendor/" + url)) {
         FileSystem::removeDir("vendor/" + url);
+    }
 
     system(s.c_str());
 }
